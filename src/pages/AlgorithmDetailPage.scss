@@ -1,0 +1,454 @@
+.detail-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding-bottom: 4rem;
+
+  body.dark-mode & {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  }
+}
+
+.detail-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  body.dark-mode & {
+    background: rgba(26, 26, 46, 0.95);
+  }
+
+  .back-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: 2px solid #333;
+    border-radius: 8px;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    body.dark-mode & {
+      border-color: #fff;
+      color: #fff;
+    }
+
+    &:hover {
+      background: #333;
+      color: #fff;
+
+      body.dark-mode & {
+        background: #fff;
+        color: #333;
+      }
+    }
+
+    svg {
+      transition: transform 0.3s ease;
+    }
+
+    &:hover svg {
+      transform: translateX(-4px);
+    }
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #333;
+
+    body.dark-mode & {
+      color: #fff;
+    }
+  }
+
+  .theme-toggle {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #333;
+
+    body.dark-mode & {
+      border-color: #fff;
+      color: #fff;
+    }
+
+    &:hover {
+      background: #333;
+      color: #fff;
+      transform: rotate(20deg);
+
+      body.dark-mode & {
+        background: #fff;
+        color: #333;
+      }
+    }
+  }
+}
+
+.detail-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.detail-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  animation: fadeInUp 0.6s ease;
+
+  .header-number {
+    font-size: 6rem;
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.05);
+    line-height: 1;
+    margin-bottom: -2rem;
+
+    body.dark-mode & {
+      color: rgba(255, 255, 255, 0.05);
+    }
+  }
+
+  .header-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #333;
+    margin: 1rem 0;
+    letter-spacing: -1px;
+
+    body.dark-mode & {
+      color: #fff;
+    }
+  }
+
+  .header-description {
+    font-size: 1.25rem;
+    color: #666;
+    max-width: 600px;
+    margin: 1rem auto 0;
+    line-height: 1.6;
+
+    body.dark-mode & {
+      color: #aaa;
+    }
+  }
+}
+
+.concept-section {
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  animation: fadeInUp 0.6s ease 0.1s backwards;
+
+  body.dark-mode & {
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid #4A90E2;
+
+    body.dark-mode & {
+      color: #fff;
+    }
+  }
+
+  p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #555;
+
+    body.dark-mode & {
+      color: #ccc;
+    }
+  }
+}
+
+.examples-section {
+  margin-bottom: 3rem;
+  animation: fadeInUp 0.6s ease 0.2s backwards;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 2rem;
+    text-align: center;
+
+    body.dark-mode & {
+      color: #fff;
+    }
+  }
+
+  .example-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    body.dark-mode & {
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+
+      body.dark-mode & {
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+      }
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #4A90E2;
+      margin-bottom: 0.75rem;
+
+      body.dark-mode & {
+        color: #6BB6FF;
+      }
+    }
+
+    p {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+
+      body.dark-mode & {
+        color: #aaa;
+      }
+    }
+
+    .code-block {
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 1.5rem;
+      overflow-x: auto;
+      border-left: 4px solid #4A90E2;
+
+      body.dark-mode & {
+        background: rgba(0, 0, 0, 0.3);
+        border-left-color: #6BB6FF;
+      }
+
+      code {
+        font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        color: #333;
+        white-space: pre;
+
+        body.dark-mode & {
+          color: #e0e0e0;
+        }
+      }
+    }
+  }
+}
+
+.applications-section {
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  animation: fadeInUp 0.6s ease 0.3s backwards;
+
+  body.dark-mode & {
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid #4A90E2;
+
+    body.dark-mode & {
+      color: #fff;
+    }
+  }
+
+  .applications-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      font-size: 1.125rem;
+      color: #555;
+      padding: 1rem 0;
+      padding-left: 2rem;
+      position: relative;
+      border-bottom: 1px solid #eee;
+      transition: all 0.3s ease;
+
+      body.dark-mode & {
+        color: #ccc;
+        border-bottom-color: rgba(255, 255, 255, 0.1);
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &:before {
+        content: '▸';
+        position: absolute;
+        left: 0;
+        color: #4A90E2;
+        font-size: 1.25rem;
+        transition: transform 0.3s ease;
+
+        body.dark-mode & {
+          color: #6BB6FF;
+        }
+      }
+
+      &:hover {
+        padding-left: 2.5rem;
+        color: #333;
+
+        body.dark-mode & {
+          color: #fff;
+        }
+
+        &:before {
+          transform: translateX(5px);
+        }
+      }
+    }
+  }
+}
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 2rem;
+
+    body.dark-mode & {
+      color: #fff;
+    }
+  }
+
+  button {
+    padding: 1rem 2rem;
+    background: #4A90E2;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: #357ABD;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(74, 144, 226, 0.3);
+    }
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .detail-navbar {
+    padding: 1rem 1.5rem;
+
+    .logo {
+      font-size: 1.2rem;
+    }
+  }
+
+  .detail-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .detail-header {
+    .header-number {
+      font-size: 4rem;
+      margin-bottom: -1rem;
+    }
+
+    .header-title {
+      font-size: 2.5rem;
+    }
+
+    .header-description {
+      font-size: 1rem;
+    }
+  }
+
+  .concept-section,
+  .applications-section {
+    padding: 1.5rem;
+
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+
+  .examples-section {
+    .example-card {
+      padding: 1.5rem;
+
+      .code-block {
+        padding: 1rem;
+
+        code {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}

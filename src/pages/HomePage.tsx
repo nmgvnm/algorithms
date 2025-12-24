@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './HomePage.scss'
 
 interface AlgorithmCard {
@@ -9,6 +10,7 @@ interface AlgorithmCard {
 }
 
 function HomePage() {
+  const navigate = useNavigate()
   const [currentPage, setCurrentPage] = useState(0)
   const [isDarkMode, setIsDarkMode] = useState(false)
   const totalPages = 3
@@ -238,7 +240,7 @@ function HomePage() {
                 <div className="card-number">{card.number}</div>
                 <h3 className="card-title">{card.title}</h3>
                 <p className="card-description">{card.description}</p>
-                <button className="card-button">Learn More</button>
+                <button className="card-button" onClick={() => navigate(`/algorithm/${card.id}`)}>Learn More</button>
               </article>
             ))}
           </div>
