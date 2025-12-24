@@ -1,0 +1,615 @@
+// Variables
+$color-black: #000;
+$color-white: #fff;
+$color-gray-light: #f5f5f5;
+$color-gray: #666;
+$color-gray-dark: #444;
+$color-background: #fafafa;
+
+$spacing-xs: 1rem;
+$spacing-sm: 2rem;
+$spacing-md: 4rem;
+$spacing-lg: 6rem;
+$spacing-xl: 8rem;
+
+$transition-fast: 0.3s;
+$transition-normal: 0.4s;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin section-padding {
+  padding: $spacing-lg $spacing-md;
+}
+
+// Main Container
+.home-page {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+// Pages Container
+.pages-container {
+  display: flex;
+  height: 100vh;
+  width: 300%;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page {
+  width: 33.333%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8rem $spacing-md $spacing-md;
+  position: relative;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+// Navbar
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-sm $spacing-md;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  gap: 2rem;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: $color-black;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all $transition-fast;
+  color: $color-black;
+  border-radius: 50%;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.05);
+    transform: rotate(20deg);
+  }
+
+  svg {
+    display: block;
+  }
+}
+
+.nav-links {
+  display: flex;
+  gap: 3rem;
+  flex: 1;
+  justify-content: center;
+
+  button {
+    background: none;
+    border: none;
+    color: $color-black;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: opacity $transition-fast;
+    padding: 0;
+    font-family: inherit;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    &.active {
+      font-weight: 700;
+      opacity: 1;
+    }
+  }
+}
+
+// Hero Page
+.hero-page {
+  background: linear-gradient(135deg, $color-gray-light 0%, #e8e8e8 100%);
+  justify-content: center;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 900px;
+}
+
+.hero-title {
+  font-size: 8rem;
+  font-weight: 900;
+  letter-spacing: -2px;
+  margin: 0;
+  line-height: 1;
+  color: $color-black;
+}
+
+.hero-subtitle {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin-top: $spacing-xs;
+  color: $color-gray;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: $color-gray;
+  margin-top: $spacing-sm;
+  font-weight: 300;
+}
+
+.page-indicator {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  span {
+    font-size: 0.85rem;
+    color: $color-gray;
+    letter-spacing: 1px;
+    opacity: 0.7;
+  }
+}
+
+// About Page
+.about-page {
+  background: $color-white;
+  justify-content: center;
+  padding: 8rem $spacing-md;
+}
+
+.section-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  text-align: center;
+  margin: 0 0 $spacing-xs 0;
+  letter-spacing: -1px;
+  color: $color-black;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: $color-gray;
+  margin-bottom: $spacing-md;
+  font-weight: 300;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-md;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-text {
+  p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: $color-gray-dark;
+    font-weight: 300;
+  }
+}
+
+// Collection Page
+.collection-page {
+  background: $color-background;
+  padding: 8rem $spacing-md $spacing-md;
+  justify-content: flex-start;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+.collection-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  letter-spacing: -2px;
+  margin: 0 0 3rem 0;
+  line-height: 1.1;
+  color: $color-black;
+  text-align: left;
+  width: 100%;
+  max-width: 1400px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1400px;
+  margin-bottom: 3rem;
+}
+
+.algorithm-card {
+  background: $color-white;
+  padding: 2rem 1.5rem;
+  border-radius: 8px;
+  transition: all $transition-normal cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeInUp 0.6s forwards;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: $color-black;
+    transform: scaleX(0);
+    transition: transform $transition-normal;
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    border-color: rgba(0, 0, 0, 0.1);
+
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-number {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #f5f5f5;
+  margin-bottom: 0.8rem;
+  letter-spacing: -1px;
+}
+
+.card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0 0 0.8rem 0;
+  color: $color-black;
+  letter-spacing: -0.5px;
+}
+
+.card-description {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #777;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+
+.card-button {
+  background: transparent;
+  border: 1px solid $color-black;
+  padding: 0.7rem 1.8rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: all $transition-fast;
+  color: $color-black;
+  text-transform: uppercase;
+  font-family: inherit;
+
+  &:hover {
+    background: $color-black;
+    color: $color-white;
+    transform: translateY(-2px);
+  }
+}
+
+// Navigation Arrows
+.nav-arrow {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.05);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all $transition-fast;
+  z-index: 100;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.1);
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  &.nav-arrow-left {
+    left: 2rem;
+  }
+
+  &.nav-arrow-right {
+    right: 2rem;
+  }
+
+  svg {
+    color: $color-black;
+  }
+}
+
+// Page Dots
+.page-dots {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.8rem;
+  z-index: 100;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.2);
+  border: none;
+  cursor: pointer;
+  transition: all $transition-fast;
+  padding: 0;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.4);
+    transform: scale(1.2);
+  }
+
+  &.active {
+    background: $color-black;
+    width: 30px;
+    border-radius: 5px;
+  }
+}
+
+// Dark Mode Support
+body.dark-mode {
+  .navbar {
+    background: rgba(18, 18, 18, 0.95);
+  }
+
+  .logo,
+  .nav-links button,
+  .theme-toggle {
+    color: $color-white;
+  }
+
+  .theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .hero-page {
+    background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+  }
+
+  .hero-title,
+  .section-title,
+  .collection-title,
+  .card-title {
+    color: $color-white;
+  }
+
+  .hero-subtitle,
+  .section-subtitle,
+  .hero-description,
+  .about-text p,
+  .card-description {
+    color: #aaa;
+  }
+
+  .page-indicator span {
+    color: #aaa;
+  }
+
+  .about-page {
+    background: #121212;
+  }
+
+  .collection-page {
+    background: #0a0a0a;
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+    }
+  }
+
+  .algorithm-card {
+    background: #1a1a1a;
+    border-color: rgba(255, 255, 255, 0.05);
+
+    &:hover {
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  .card-number {
+    color: #2a2a2a;
+  }
+
+  .card-button {
+    border-color: $color-white;
+    color: $color-white;
+
+    &:hover {
+      background: $color-white;
+      color: $color-black;
+    }
+  }
+
+  .nav-arrow {
+    background: rgba(255, 255, 255, 0.1);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    svg {
+      color: $color-white;
+    }
+  }
+
+  .dot {
+    background: rgba(255, 255, 255, 0.3);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    &.active {
+      background: $color-white;
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 1200px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 6rem 1.5rem 2rem;
+  }
+
+  .navbar {
+    padding: 1.5rem 1.5rem;
+    gap: 1rem;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+
+  .nav-links {
+    gap: 1.2rem;
+
+    button {
+      font-size: 0.75rem;
+    }
+  }
+
+  .theme-toggle {
+    padding: 0.4rem;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+  }
+
+  .collection-title {
+    font-size: 2.5rem;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: $spacing-sm;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .collection-page {
+    padding: 6rem 1.5rem 2rem;
+  }
+
+  .about-page {
+    padding: 6rem 1.5rem;
+  }
+
+  .nav-arrow {
+    width: 40px;
+    height: 40px;
+
+    &.nav-arrow-left {
+      left: 1rem;
+    }
+
+    &.nav-arrow-right {
+      right: 1rem;
+    }
+  }
+}
