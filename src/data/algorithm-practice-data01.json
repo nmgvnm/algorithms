@@ -1,0 +1,129 @@
+{
+  "evenStats": {
+    "numbers": [
+      3, 8, 15, 22, 7, 14, 10, 5, 18, 27, 30, 41, 56, 63, 72, 91, 100, 2, 9, 44,
+      67, 88, 54, 21, 36, 49, 60, 73, 84, 95
+    ]
+  },
+
+  "maxValue": {
+    "scores": [
+      72, 88, 95, 64, 88, 99, 81, 77, 68, 92, 85, 90, 73, 100, 67, 84, 91, 59,
+      76, 98
+    ]
+  },
+
+  "activeItems": {
+    "users": [
+      { "id": 1, "name": "Alice", "status": "ACTIVE", "age": 29 },
+      { "id": 2, "name": "Bob", "status": "INACTIVE", "age": 34 },
+      { "id": 3, "name": "Chris", "status": "ACTIVE", "age": 41 },
+      { "id": 4, "name": "Daisy", "status": "PENDING", "age": 22 },
+      { "id": 5, "name": "Evan", "status": "ACTIVE", "age": 27 },
+      { "id": 6, "name": "Fiona", "status": "INACTIVE", "age": 31 },
+      { "id": 7, "name": "George", "status": "ACTIVE", "age": 38 },
+      { "id": 8, "name": "Hana", "status": "ACTIVE", "age": 25 },
+      { "id": 9, "name": "Ian", "status": "PENDING", "age": 33 },
+      { "id": 10, "name": "Jane", "status": "ACTIVE", "age": 45 },
+      { "id": 11, "name": "Kyle", "status": "ACTIVE", "age": 28 },
+      { "id": 12, "name": "Lena", "status": "INACTIVE", "age": 36 },
+      { "id": 13, "name": "Mike", "status": "ACTIVE", "age": 42 },
+      { "id": 14, "name": "Nina", "status": "ACTIVE", "age": 24 },
+      { "id": 15, "name": "Oscar", "status": "PENDING", "age": 39 }
+    ]
+  },
+
+  "duplicateCount": {
+    "tags": [
+      "react",
+      "typescript",
+      "react",
+      "css",
+      "html",
+      "react",
+      "css",
+      "node",
+      "docker",
+      "node",
+      "aws",
+      "typescript",
+      "react",
+      "html",
+      "css",
+      "graphql",
+      "node",
+      "docker",
+      "react",
+      "aws"
+    ]
+  },
+
+  "continuousIncrease": {
+    "dailySales": [
+      100, 120, 130, 90, 95, 110, 140, 160, 155, 170, 180, 175, 190, 200, 210,
+      180, 185, 195, 205, 215
+    ]
+  },
+
+  "arrayIntersection": {
+    "userTags": [
+      "react",
+      "node",
+      "css",
+      "docker",
+      "typescript",
+      "graphql",
+      "jest",
+      "vite",
+      "tailwind"
+    ],
+    "projectTags": [
+      "typescript",
+      "react",
+      "docker",
+      "aws",
+      "vite",
+      "eslint",
+      "prettier",
+      "tailwind"
+    ]
+  },
+
+  "allConditionCheck": {
+    "formValues": [
+      { "field": "email", "isValid": true },
+      { "field": "password", "isValid": true },
+      { "field": "nickname", "isValid": false },
+      { "field": "phone", "isValid": true },
+      { "field": "address", "isValid": true }
+    ]
+  },
+
+  "cumulativeSum": {
+    "monthlyRevenue": [
+      1200, 1500, 1800, 2000, 2300, 2600, 3000, 3400, 3900, 4500, 5200, 6000
+    ]
+  },
+
+  "rankingData": {
+    "players": [
+      { "id": 1, "name": "Player A", "score": 85 },
+      { "id": 2, "name": "Player B", "score": 92 },
+      { "id": 3, "name": "Player C", "score": 78 },
+      { "id": 4, "name": "Player D", "score": 92 },
+      { "id": 5, "name": "Player E", "score": 88 },
+      { "id": 6, "name": "Player F", "score": 95 },
+      { "id": 7, "name": "Player G", "score": 67 },
+      { "id": 8, "name": "Player H", "score": 90 },
+      { "id": 9, "name": "Player I", "score": 73 },
+      { "id": 10, "name": "Player J", "score": 99 }
+    ]
+  },
+
+  "slidingWindow": {
+    "dailyVisitors": [
+      120, 150, 180, 90, 200, 170, 160, 190, 210, 180, 220, 240, 230, 250
+    ],
+    "windowSize": 5
+  }
+}

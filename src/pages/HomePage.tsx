@@ -43,12 +43,12 @@ function HomePage() {
   }
 
   const cards: AlgorithmCard[] = [
-    {
-      id: 0,
-      number: '00',
-      title: '알고리즘 기초',
-      description: '알고리즘의 개념과 시간·공간 복잡도 등 문제 해결의 기본을 다룹니다.'
-    },
+    // {
+    //   id: 0,
+    //   number: '00',
+    //   title: '알고리즘 기초',
+    //   description: '알고리즘의 개념과 시간·공간 복잡도 등 문제 해결의 기본을 다룹니다.'
+    // },
     {
       id: 1,
       number: '01',
