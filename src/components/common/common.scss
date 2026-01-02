@@ -1,0 +1,112 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+// Reusable Stat Card
+.stat-card {
+  @include card-base;
+  padding: $spacing-md;
+  text-align: center;
+
+  .stat-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $primary-color;
+    margin-bottom: $spacing-xs;
+
+    body.dark-mode & {
+      color: $primary-light;
+    }
+  }
+
+  .stat-label {
+    font-size: 0.875rem;
+    color: $text-light;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    body.dark-mode & {
+      color: var(--text-tertiary);
+    }
+  }
+
+  .stat-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: $secondary-color;
+    color: $primary-color;
+    border-radius: $border-radius-sm;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-top: $spacing-xs;
+
+    body.dark-mode & {
+      background: rgba(74, 144, 226, 0.2);
+      color: $primary-light;
+    }
+  }
+}
+
+// Reusable Filter Toggle
+.filter-toggle {
+  display: flex;
+  gap: $spacing-xs;
+  background: rgba(255, 255, 255, 0.5);
+  padding: $spacing-xs;
+  border-radius: $border-radius-md;
+  backdrop-filter: blur(10px);
+
+  body.dark-mode & {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  button {
+    @include button-base;
+    background: transparent;
+    color: $text-dark;
+    padding: $spacing-xs $spacing-md;
+
+    body.dark-mode & {
+      color: var(--text-primary);
+    }
+
+    &:hover {
+      background: rgba(74, 144, 226, 0.1);
+    }
+
+    &.active {
+      background: $primary-color;
+      color: white;
+
+      body.dark-mode & {
+        background: $primary-light;
+        color: $text-dark;
+      }
+    }
+  }
+}
+
+// Reusable Code Block (if needed)
+.code-block {
+  background: #f8f9fa;
+  border-radius: $border-radius-md;
+  padding: $spacing-md;
+  overflow-x: auto;
+  border-left: 4px solid $primary-color;
+
+  body.dark-mode & {
+    background: rgba(0, 0, 0, 0.3);
+    border-left-color: $primary-light;
+  }
+
+  code {
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: $text-dark;
+    white-space: pre;
+
+    body.dark-mode & {
+      color: #e0e0e0;
+    }
+  }
+}

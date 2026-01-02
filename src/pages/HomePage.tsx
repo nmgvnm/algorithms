@@ -11,7 +11,11 @@ interface AlgorithmCard {
 
 function HomePage() {
   const navigate = useNavigate()
-  const [currentPage, setCurrentPage] = useState(0)
+  const [currentPage, setCurrentPage] = useState(() => {
+    // 페이지 복원: localStorage에서 마지막 페이지 가져오기
+    const savedPage = localStorage.getItem('homePage')
+    return savedPage ? parseInt(savedPage) : 0
+  })
   const [isDarkMode, setIsDarkMode] = useState(false)
   const totalPages = 3
 
@@ -101,18 +105,23 @@ function HomePage() {
 
   const nextPage = () => {
     if (currentPage < totalPages - 1) {
-      setCurrentPage(currentPage + 1)
+      const newPage = currentPage + 1
+      setCurrentPage(newPage)
+      localStorage.setItem('homePage', newPage.toString())
     }
   }
 
   const prevPage = () => {
     if (currentPage > 0) {
-      setCurrentPage(currentPage - 1)
+      const newPage = currentPage - 1
+      setCurrentPage(newPage)
+      localStorage.setItem('homePage', newPage.toString())
     }
   }
 
   const goToPage = (page: number) => {
     setCurrentPage(page)
+    localStorage.setItem('homePage', page.toString())
   }
 
   useEffect(() => {

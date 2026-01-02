@@ -1,0 +1,25 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.string-demo-container {
+  padding: $spacing-lg;
+  @include card-base;
+  margin: $spacing-lg 0;
+
+  h3 {
+    color: $text-dark;
+    margin-bottom: $spacing-md;
+
+    body.dark-mode & {
+      color: var(--text-primary);
+    }
+  }
+
+  p {
+    color: $text-light;
+
+    body.dark-mode & {
+      color: var(--text-secondary);
+    }
+  }
+}

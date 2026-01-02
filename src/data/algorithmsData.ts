@@ -49,6 +49,8 @@ const bubbleSort = (arr: number[]) => {
     title: '배열과 반복',
     description: '배열을 순회하며 데이터를 처리하는 가장 기본적인 알고리즘 패턴입니다.',
     concept: '배열은 연속된 메모리 공간에 같은 타입의 데이터를 저장하는 자료구조입니다. 반복문을 통해 배열의 각 요소에 접근하고 처리할 수 있습니다.',
+    interactive: true,
+    interactiveComponent: 'Chapter01',
     examples: [
       {
         title: '배열 순회 및 필터링',

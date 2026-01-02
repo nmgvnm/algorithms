@@ -17,4 +17,6 @@ export interface AlgorithmDetail {
     code: string
   }[]
   applications: string[]
+  interactive?: boolean           // 인터랙티브 컴포넌트가 있는지
+  interactiveComponent?: string   // 컴포넌트 키 (예: 'Chapter01')
 }

@@ -1,12 +1,22 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { algorithmsData } from "../data/algorithmsData";
+import { interactiveComponents } from "../components/interactive";
 import "./AlgorithmDetailPage.scss";
 
 function AlgorithmDetailPage() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const handleBack = () => {
+    // 히스토리가 있으면 뒤로가기, 없으면 홈으로
+    if (window.history.length > 1) {
+      navigate(-1);
+    } else {
+      navigate("/");
+    }
+  };
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -34,6 +44,11 @@ function AlgorithmDetailPage() {
 
   const algorithm = algorithmsData.find((a) => a.id === parseInt(id || "0"));
 
+  // 인터랙티브 컴포넌트 가져오기
+  const InteractiveComponent = algorithm?.interactiveComponent
+    ? interactiveComponents[algorithm.interactiveComponent]
+    : null;
+
   if (!algorithm) {
     return (
       <div className="detail-page">
@@ -48,7 +63,7 @@ function AlgorithmDetailPage() {
   return (
     <div className="detail-page">
       <nav className="detail-navbar">
-        <button className="back-button" onClick={() => navigate("/")}>
+        <button className="back-button" onClick={handleBack}>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path
               d="M15 18L9 12L15 6"
@@ -123,6 +138,16 @@ function AlgorithmDetailPage() {
             ))}
           </ul>
         </section>
+
+        {/* 인터랙티브 섹션 */}
+        {InteractiveComponent && (
+          <section className="interactive-section">
+            <h2>인터랙티브 실습</h2>
+            <Suspense fallback={<div className="loading">로딩중...</div>}>
+              <InteractiveComponent />
+            </Suspense>
+          </section>
+        )}
       </div>
     </div>
   );
