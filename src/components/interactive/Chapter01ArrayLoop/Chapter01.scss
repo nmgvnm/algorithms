@@ -3,23 +3,140 @@
 
 .array-loop-container {
   padding: $spacing-lg;
-  @include card-base;
-  margin: $spacing-lg 0;
+}
 
-  h3 {
+// 통계 카드 그리드
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: $spacing-md;
+  margin-bottom: $spacing-xl;
+
+  @include mobile {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-sm;
+  }
+}
+
+.stat-card {
+  @include card-base;
+  padding: $spacing-lg;
+  text-align: center;
+  transition: all $transition-normal;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-hover;
+
+    body.dark-mode & {
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  .stat-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $primary-color;
+    margin-bottom: $spacing-xs;
+
+    body.dark-mode & {
+      color: $primary-light;
+    }
+  }
+
+  .stat-label {
+    font-size: 0.875rem;
+    color: $text-light;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    body.dark-mode & {
+      color: var(--text-tertiary);
+    }
+  }
+}
+
+// 숫자 리스트 섹션
+.number-list-section {
+  @include card-base;
+  padding: $spacing-lg;
+}
+
+// 필터 토글
+.filter-toggle {
+  display: flex;
+  gap: $spacing-xs;
+  background: rgba(0, 0, 0, 0.03);
+  padding: $spacing-xs;
+  border-radius: $border-radius-md;
+  margin-bottom: $spacing-lg;
+  width: fit-content;
+
+  body.dark-mode & {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  button {
+    @include button-base;
+    background: transparent;
     color: $text-dark;
-    margin-bottom: $spacing-md;
+    padding: $spacing-xs $spacing-md;
+    font-size: 0.875rem;
 
     body.dark-mode & {
       color: var(--text-primary);
     }
+
+    &:hover {
+      background: rgba(74, 144, 226, 0.1);
+    }
+
+    &.active {
+      background: $primary-color;
+      color: white;
+
+      body.dark-mode & {
+        background: $primary-light;
+        color: $text-dark;
+      }
+    }
+  }
+}
+
+// 숫자 그리드
+.number-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  gap: $spacing-sm;
+
+  @include mobile {
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  }
+}
+
+.number-item {
+  @include flex-center;
+  aspect-ratio: 1;
+  border-radius: $border-radius-md;
+  font-size: 1.25rem;
+  font-weight: 600;
+  transition: all $transition-fast;
+  cursor: pointer;
+  background: #E3F2FD;
+  color: #1976D2;
+
+  body.dark-mode & {
+    background: rgba(25, 118, 210, 0.2);
+    color: #64B5F6;
   }
 
-  p {
-    color: $text-light;
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: $shadow-md;
+    background: #BBDEFB;
 
     body.dark-mode & {
-      color: var(--text-secondary);
+      background: rgba(25, 118, 210, 0.3);
     }
   }
 }
