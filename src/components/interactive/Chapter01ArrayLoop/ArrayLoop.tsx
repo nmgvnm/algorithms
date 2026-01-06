@@ -16,39 +16,18 @@ export default function ArrayLoop() {
     { label: "짝수만", value: "even" },
     { label: "홀수만", value: "odd" },
   ];
-  console.log("numberDatas:", numberDatas);
-  console.log("statValue:", statValue);
+  const card = [
+    { label: "짝수 개수", value: statValue.evenCount },
+    { label: "짝수 비율", value: statValue.evenRatio + "%" },
+    { label: "최댓값", value: statValue.MaxValue },
+    { label: "최댓값 위치", value: "#" + statValue.MaxValueIndex },
+  ];
   useEffect(() => {
     const nums = Chapter01Data?.evenStats?.numbers;
     if (Array.isArray(nums)) {
       setNumberDatas(nums);
     }
   }, []);
-
-  // 최대값, 최대값 위치 구하기
-  const MaxNumber = () => {
-    // 최대값만 구할거면 정렬은 느리다
-    // 반복문 : 시간 : O(n)
-    // 정렬 : 시간 O(n log n)
-    // 시간 복잡도 : O(1) < O(log n) < O(n) < O(n log n) < O(x²) < O(x³) < O(2ˣ) < O(n!)
-    // const arr = numberDatas.sort((a, b) => a - b); // 오름차순 정렬방식은 시간 복잡도가 높다
-
-    let max = numberDatas[0];
-    let maxIndex = 0;
-
-    for (let i = 1; i < numberDatas?.length; i++) {
-      if (numberDatas[i] > max) {
-        max = numberDatas[i];
-        maxIndex = i;
-      }
-    }
-
-    setStatValue((prev) => ({
-      ...prev,
-      MaxValue: max,
-      MaxValueIndex: maxIndex,
-    }));
-  };
 
   const calculation = () => {
     // 짝수 구하기
@@ -64,6 +43,12 @@ export default function ArrayLoop() {
     const total = numberDatas.length;
     const evenRatio = Number(((evenCount / total) * 100).toFixed(0));
 
+    // 최대값, 최대값 위치 구하기
+    // 최대값만 구할거면 정렬은 느리다
+    // 반복문 : 시간 : O(n)
+    // 정렬 : 시간 O(n log n)
+    // 시간 복잡도 : O(1) < O(log n) < O(n) < O(n log n) < O(x²) < O(x³) < O(2ˣ) < O(n!)
+    // const arr = numberDatas.sort((a, b) => a - b); // 오름차순 정렬방식은 시간 복잡도가 높다
     let max = numberDatas[0];
     let maxIndex = 0;
 
@@ -114,30 +99,15 @@ export default function ArrayLoop() {
   return (
     <div className="array-loop-container">
       <div className="stats-grid">
-        <div className="stat-card">
-          <div className="stat-value">{statValue?.evenCount}</div>
-          <div className="stat-label">짝수 개수</div>
-        </div>
-
-        <div className="stat-card">
-          <div className="stat-value">{statValue?.evenRatio}%</div>
-          <div className="stat-label">짝수 비율</div>
-        </div>
-
-        <div className="stat-card">
-          <div className="stat-value">{statValue?.MaxValue}</div>
-          <div className="stat-label">최댓값</div>
-        </div>
-
-        <div className="stat-card">
-          <div className="stat-value">#{statValue?.MaxValueIndex}</div>
-          <div className="stat-label">최댓값 위치</div>
-        </div>
+        {card.map((item, i) => (
+          <div className="stat-card" key={i}>
+            <div className="stat-value">{item.value}</div>
+            <div className="stat-label">{item.label}</div>
+          </div>
+        ))}
       </div>
 
-      {/* 숫자 리스트 영역 */}
       <div className="number-list-section">
-        {/* 필터 토글 */}
         <div className="filter-toggle">
           {filtering?.map((item, i) => (
             <button
@@ -150,7 +120,6 @@ export default function ArrayLoop() {
           ))}
         </div>
 
-        {/* 숫자 리스트 */}
         <div className="number-grid">
           {numberDatas?.map((item, index) => (
             <div className="number-item" key={index}>
