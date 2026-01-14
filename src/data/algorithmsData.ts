@@ -105,6 +105,8 @@ function twoSum(arr: number[], target: number): [number, number] | null {
     title: '정렬',
     description: '데이터를 일정한 기준에 따라 정렬하는 알고리즘을 학습합니다.',
     concept: '정렬은 데이터를 특정 순서로 배열하는 과정입니다. 다양한 정렬 알고리즘이 있으며, 각각 시간 복잡도와 공간 복잡도가 다릅니다.',
+    interactive: true,
+    interactiveComponent: 'Chapter02',
     examples: [
       {
         title: 'Quick Sort (빠른 정렬)',

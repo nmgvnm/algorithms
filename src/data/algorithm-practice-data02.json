@@ -1,0 +1,442 @@
+{
+  "A_searchResults_products": {
+    "description": "상품 검색/필터/정렬 페이지용 데이터. 검색 엔진 결과 정렬(관련도 score, 최신, 리뷰, 가격) 모두 가능",
+    "filters": {
+      "categories": ["All", "Sports", "Tech", "Home", "Outdoor", "Beauty"],
+      "priceRanges": [
+        { "label": "All", "min": 0, "max": 9999999 },
+        { "label": "~20,000", "min": 0, "max": 20000 },
+        { "label": "20,001~50,000", "min": 20001, "max": 50000 },
+        { "label": "5,0001~100,000", "min": 50001, "max": 100000 },
+        { "label": "10,0001~", "min": 100001, "max": 9999999 }
+      ]
+    },
+    "sortOptions": [
+      {
+        "key": "relevance",
+        "label": "관련도순",
+        "desc": "searchScore 내림차순, 동점이면 sales30d 내림차순 → createdAt 내림차순"
+      },
+      { "key": "priceAsc", "label": "가격 낮은 순", "desc": "price 오름차순" },
+      { "key": "priceDesc", "label": "가격 높은 순", "desc": "price 내림차순" },
+      {
+        "key": "review",
+        "label": "리뷰 많은 순",
+        "desc": "reviewCount 내림차순"
+      },
+      { "key": "latest", "label": "최신순", "desc": "createdAt 내림차순" }
+    ],
+    "items": [
+      {
+        "id": 2001,
+        "name": "AeroFit 러닝화",
+        "category": "sports",
+        "price": 89000,
+        "rating": 4.6,
+        "reviewCount": 812,
+        "sales30d": 1240,
+        "createdAt": "2025-11-18T10:05:00",
+        "stock": 42,
+        "featured": true,
+        "imageUrl": "https://picsum.photos/seed/prod2001/400/400",
+        "tags": ["러닝", "신발"],
+        "searchScore": 0.92
+      },
+      {
+        "id": 2002,
+        "name": "CloudLite 바람막이",
+        "category": "sports",
+        "price": 69000,
+        "rating": 4.2,
+        "reviewCount": 210,
+        "sales30d": 540,
+        "createdAt": "2025-10-03T09:20:00",
+        "stock": 80,
+        "featured": false,
+        "imageUrl": "https://picsum.photos/seed/prod2002/400/400",
+        "tags": ["러닝", "아우터"],
+        "searchScore": 0.74
+      },
+      {
+        "id": 2003,
+        "name": "PulsePro 스마트워치",
+        "category": "tech",
+        "price": 159000,
+        "rating": 4.4,
+        "reviewCount": 534,
+        "sales30d": 760,
+        "createdAt": "2025-09-12T14:30:00",
+        "stock": 15,
+        "featured": true,
+        "imageUrl": "https://picsum.photos/seed/prod2003/400/400",
+        "tags": ["웨어러블", "헬스"],
+        "searchScore": 0.86
+      },
+      {
+        "id": 2004,
+        "name": "EchoBuds 무선이어폰",
+        "category": "tech",
+        "price": 99000,
+        "rating": 4.1,
+        "reviewCount": 1203,
+        "sales30d": 1680,
+        "createdAt": "2025-12-02T11:10:00",
+        "stock": 0,
+        "featured": true,
+        "imageUrl": "https://picsum.photos/seed/prod2004/400/400",
+        "tags": ["음악", "통화"],
+        "searchScore": 0.81
+      },
+      {
+        "id": 2005,
+        "name": "PaperWhite 스탠드조명",
+        "category": "home",
+        "price": 39000,
+        "rating": 4.7,
+        "reviewCount": 342,
+        "sales30d": 310,
+        "createdAt": "2025-08-20T18:00:00",
+        "stock": 25,
+        "featured": false,
+        "imageUrl": "https://picsum.photos/seed/prod2005/400/400",
+        "tags": ["인테리어", "조명"],
+        "searchScore": 0.55
+      },
+      {
+        "id": 2006,
+        "name": "AquaBottle 텀블러",
+        "category": "outdoor",
+        "price": 21000,
+        "rating": 4.5,
+        "reviewCount": 430,
+        "sales30d": 870,
+        "createdAt": "2025-06-14T16:05:00",
+        "stock": 60,
+        "featured": false,
+        "imageUrl": "https://picsum.photos/seed/prod2006/400/400",
+        "tags": ["캠핑", "텀블러"],
+        "searchScore": 0.61
+      },
+      {
+        "id": 2007,
+        "name": "ZenSeat 쿠션",
+        "category": "home",
+        "price": 19000,
+        "rating": 4.3,
+        "reviewCount": 980,
+        "sales30d": 940,
+        "createdAt": "2025-12-20T08:45:00",
+        "stock": 120,
+        "featured": false,
+        "imageUrl": "https://picsum.photos/seed/prod2007/400/400",
+        "tags": ["쿠션", "편안함"],
+        "searchScore": 0.67
+      },
+      {
+        "id": 2008,
+        "name": "GlowUp 비타C 세럼",
+        "category": "beauty",
+        "price": 28000,
+        "rating": 4.8,
+        "reviewCount": 1640,
+        "sales30d": 2100,
+        "createdAt": "2025-12-28T21:15:00",
+        "stock": 5,
+        "featured": true,
+        "imageUrl": "https://picsum.photos/seed/prod2008/400/400",
+        "tags": ["스킨케어", "세럼"],
+        "searchScore": 0.89
+      },
+      {
+        "id": 2009,
+        "name": "TrailPack 백팩 20L",
+        "category": "outdoor",
+        "price": 79000,
+        "rating": 4.6,
+        "reviewCount": 278,
+        "sales30d": 410,
+        "createdAt": "2025-05-09T13:40:00",
+        "stock": 18,
+        "featured": true,
+        "imageUrl": "https://picsum.photos/seed/prod2009/400/400",
+        "tags": ["백팩", "하이킹"],
+        "searchScore": 0.58
+      },
+      {
+        "id": 2010,
+        "name": "DeskFlow 마우스패드",
+        "category": "tech",
+        "price": 12000,
+        "rating": 4.3,
+        "reviewCount": 870,
+        "sales30d": 980,
+        "createdAt": "2025-03-11T15:00:00",
+        "stock": 140,
+        "featured": false,
+        "imageUrl": "https://picsum.photos/seed/prod2010/400/400",
+        "tags": ["데스크", "사무"],
+        "searchScore": 0.44
+      }
+    ]
+  },
+
+  "B_priorityQueue_csTickets": {
+    "description": "CS 티켓 우선순위 대시보드용 데이터. 긴급도/마감시간/대기시간 다중 정렬 + 상태 탭(대기/진행/완료) 구현 가능",
+    "tabs": ["waiting", "in_progress", "done"],
+    "sortOptions": [
+      {
+        "key": "priorityDefault",
+        "label": "우선순위 기본",
+        "desc": "긴급도(severity) desc → SLA 마감 임박(deadlineAt) asc → 대기시간(waitingMinutes) desc → 생성일(createdAt) asc"
+      },
+      { "key": "slaSoon", "label": "마감 임박순", "desc": "deadlineAt asc" },
+      {
+        "key": "waitLong",
+        "label": "대기 오래된순",
+        "desc": "waitingMinutes desc"
+      }
+    ],
+    "items": [
+      {
+        "ticketId": "T-5001",
+        "title": "결제 완료인데 주문이 취소됨",
+        "status": "waiting",
+        "severity": 5,
+        "customerTier": "vip",
+        "createdAt": "2026-01-05T09:10:00",
+        "deadlineAt": "2026-01-06T10:00:00",
+        "waitingMinutes": 1490,
+        "assignee": null,
+        "channel": "chat",
+        "tags": ["payment", "critical"]
+      },
+      {
+        "ticketId": "T-5002",
+        "title": "배송지 변경 요청",
+        "status": "in_progress",
+        "severity": 2,
+        "customerTier": "standard",
+        "createdAt": "2026-01-05T13:20:00",
+        "deadlineAt": "2026-01-07T18:00:00",
+        "waitingMinutes": 1240,
+        "assignee": "minji",
+        "channel": "email",
+        "tags": ["delivery"]
+      },
+      {
+        "ticketId": "T-5003",
+        "title": "환불 처리 지연 문의",
+        "status": "waiting",
+        "severity": 4,
+        "customerTier": "standard",
+        "createdAt": "2026-01-04T11:30:00",
+        "deadlineAt": "2026-01-06T12:00:00",
+        "waitingMinutes": 2790,
+        "assignee": null,
+        "channel": "phone",
+        "tags": ["refund", "sla"]
+      },
+      {
+        "ticketId": "T-5004",
+        "title": "쿠폰 적용이 안 됨",
+        "status": "waiting",
+        "severity": 3,
+        "customerTier": "vip",
+        "createdAt": "2026-01-06T08:05:00",
+        "deadlineAt": "2026-01-06T20:00:00",
+        "waitingMinutes": 480,
+        "assignee": null,
+        "channel": "chat",
+        "tags": ["coupon"]
+      },
+      {
+        "ticketId": "T-5005",
+        "title": "계정 로그인 오류",
+        "status": "in_progress",
+        "severity": 5,
+        "customerTier": "standard",
+        "createdAt": "2026-01-06T07:10:00",
+        "deadlineAt": "2026-01-06T11:30:00",
+        "waitingMinutes": 535,
+        "assignee": "sohyun",
+        "channel": "chat",
+        "tags": ["auth", "critical"]
+      },
+      {
+        "ticketId": "T-5006",
+        "title": "상품 불량 사진 첨부",
+        "status": "done",
+        "severity": 3,
+        "customerTier": "standard",
+        "createdAt": "2026-01-03T16:40:00",
+        "deadlineAt": "2026-01-05T18:00:00",
+        "waitingMinutes": 0,
+        "assignee": "minji",
+        "channel": "email",
+        "tags": ["defect"]
+      },
+      {
+        "ticketId": "T-5007",
+        "title": "정기구독 해지 요청",
+        "status": "waiting",
+        "severity": 2,
+        "customerTier": "standard",
+        "createdAt": "2026-01-02T09:00:00",
+        "deadlineAt": "2026-01-09T18:00:00",
+        "waitingMinutes": 5760,
+        "assignee": null,
+        "channel": "email",
+        "tags": ["subscription"]
+      },
+      {
+        "ticketId": "T-5008",
+        "title": "포인트 적립 누락",
+        "status": "waiting",
+        "severity": 3,
+        "customerTier": "vip",
+        "createdAt": "2026-01-05T22:15:00",
+        "deadlineAt": "2026-01-07T12:00:00",
+        "waitingMinutes": 900,
+        "assignee": null,
+        "channel": "chat",
+        "tags": ["points"]
+      }
+    ]
+  },
+
+  "C_analyticsReport_topN_trends": {
+    "description": "분석 리포트(Top N + 트렌드)용 데이터. 기간(7/30일) 선택, Top10 정렬, 동점 처리, 증감률 정렬, 요약 통계 계산 가능",
+    "periodOptions": [
+      { "key": "7d", "label": "최근 7일", "days": 7 },
+      { "key": "30d", "label": "최근 30일", "days": 30 }
+    ],
+    "metrics": ["revenue", "orders", "conversionRate"],
+    "items": [
+      {
+        "entityType": "category",
+        "entityId": "tech",
+        "entityName": "Tech",
+        "current": {
+          "period": "7d",
+          "revenue": 18200000,
+          "orders": 620,
+          "conversionRate": 3.2
+        },
+        "previous": {
+          "period": "7d_prev",
+          "revenue": 16500000,
+          "orders": 590,
+          "conversionRate": 3.0
+        },
+        "tieBreak": {
+          "recentRevenue": 4200000,
+          "lastUpdatedAt": "2026-01-06T08:40:00"
+        }
+      },
+      {
+        "entityType": "category",
+        "entityId": "beauty",
+        "entityName": "Beauty",
+        "current": {
+          "period": "7d",
+          "revenue": 15600000,
+          "orders": 710,
+          "conversionRate": 4.1
+        },
+        "previous": {
+          "period": "7d_prev",
+          "revenue": 12000000,
+          "orders": 650,
+          "conversionRate": 3.8
+        },
+        "tieBreak": {
+          "recentRevenue": 3900000,
+          "lastUpdatedAt": "2026-01-06T07:55:00"
+        }
+      },
+      {
+        "entityType": "category",
+        "entityId": "sports",
+        "entityName": "Sports",
+        "current": {
+          "period": "7d",
+          "revenue": 13100000,
+          "orders": 480,
+          "conversionRate": 2.6
+        },
+        "previous": {
+          "period": "7d_prev",
+          "revenue": 14200000,
+          "orders": 510,
+          "conversionRate": 2.8
+        },
+        "tieBreak": {
+          "recentRevenue": 3100000,
+          "lastUpdatedAt": "2026-01-05T23:30:00"
+        }
+      },
+      {
+        "entityType": "category",
+        "entityId": "home",
+        "entityName": "Home",
+        "current": {
+          "period": "7d",
+          "revenue": 9800000,
+          "orders": 530,
+          "conversionRate": 3.6
+        },
+        "previous": {
+          "period": "7d_prev",
+          "revenue": 9100000,
+          "orders": 520,
+          "conversionRate": 3.4
+        },
+        "tieBreak": {
+          "recentRevenue": 2600000,
+          "lastUpdatedAt": "2026-01-06T09:05:00"
+        }
+      },
+      {
+        "entityType": "category",
+        "entityId": "outdoor",
+        "entityName": "Outdoor",
+        "current": {
+          "period": "7d",
+          "revenue": 7400000,
+          "orders": 260,
+          "conversionRate": 2.1
+        },
+        "previous": {
+          "period": "7d_prev",
+          "revenue": 6900000,
+          "orders": 250,
+          "conversionRate": 2.0
+        },
+        "tieBreak": {
+          "recentRevenue": 1800000,
+          "lastUpdatedAt": "2026-01-06T06:50:00"
+        }
+      }
+    ],
+    "timeSeries": {
+      "revenueDaily": [
+        { "date": "2025-12-31", "revenue": 5100000 },
+        { "date": "2026-01-01", "revenue": 4700000 },
+        { "date": "2026-01-02", "revenue": 5600000 },
+        { "date": "2026-01-03", "revenue": 6200000 },
+        { "date": "2026-01-04", "revenue": 5900000 },
+        { "date": "2026-01-05", "revenue": 6400000 },
+        { "date": "2026-01-06", "revenue": 6900000 }
+      ],
+      "ordersDaily": [
+        { "date": "2025-12-31", "orders": 180 },
+        { "date": "2026-01-01", "orders": 165 },
+        { "date": "2026-01-02", "orders": 190 },
+        { "date": "2026-01-03", "orders": 210 },
+        { "date": "2026-01-04", "orders": 205 },
+        { "date": "2026-01-05", "orders": 225 },
+        { "date": "2026-01-06", "orders": 240 }
+      ]
+    }
+  }
+}
